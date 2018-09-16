@@ -1,27 +1,85 @@
-# ImageLibrary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-## Development server
+# Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
+npm install ngx-upload-image --save
 
-## Code scaffolding
+## Usage
+In your app.module.ts import it using @NgModule decorator.
+```
+import { NgxImagesUploadModule } from 'ngxImagesUpload';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgxImagesUploadModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Build
+## Dependencies
+Also import font-awesome into your application
+npm install font-awesome --save
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Then in HTML
+```
+<ngx-ImageUpload
+    (getImage)="saveImage($event)">
+</ngx-ImageUpload>
+```
+You will get all the images saved by the user, one at a time with getImage event.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Customization 
+```
+    <ngx-ImageUpload    
+        [extensions]="['image/jpeg']"
+        [wrongExtensionTypeMessage]="'Please enter image of correct extension type'"
+        [maxFileSize]="1048576"
+        [maxFileSizeMessage]="'Image size is more than the max file size'"
+        [buttonMessage]="'UPLOAD IMAGE'"
+        [dropBoxMessage]="'Drop your images here!'"
+        [preview]="true"
+        [max]="5"
+        [displayAlert]="false"
+        (alertMessage)="getErrorMessage($event)"
+        (getImage)="saveImage($event)">
+    </ngx-ImageUpload>
+```
+ ### [extensions]
+ Default is 'image/png' and 'image/jpeg'. Upload images with specific extensions. You  can use any extension at your whim, just add extension to the list.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### [wrongExtensionTypeMessage]
+If extension of image not there in extensions array, what message user should see. Default is 'Please enter image of correct extension type'.
 
-## Further help
+### [maxFileSize]
+Maximum size of image allowed to upload. By default you can upload any image size.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### [maxFileSizeMessage]
+If size of image is more than maxFileSize, this msg will be shown. Default is 'Image size is more than the max file size'.
+
+### [buttonMessage]
+What should be displayed inside button of uploading image. Default: 'UPLOAD IMAGE'
+
+### [dropBoxMessage]
+Message after the button. Default: 'Drop your images here!'
+
+### [preview]
+Whether user should be able to see the uploaded image. Default is true.
+
+### [max]
+How many images user should be able to upload. Default is 100.
+
+### [displayAlert]
+If an error occurs related to maxFileSize or extensions, whether user should be able  to see the alert or not. Default is true. If you want to customize the error, set this property to false and get the errorMessage from alertMessage event.
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details

@@ -1,0 +1,27 @@
+{
+  "name": "ngx-images-upload",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "font-awesome": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachin5590/image-library.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular4",
+    "angular5",
+    "angular6",
+    "image",
+    "upload",
+    "images"
+  ],
+  "authors": [
+    "Sachin Jagtap"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sachin5590/image-library#readme"
+}

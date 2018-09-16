@@ -1,0 +1,59 @@
+
+.img-upload {
+    font-family: sans-serif;
+    color: #9b9b9b;
+    clear: both;
+}
+
+.img-upload .img-ul-button {
+    font-weight: 500;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    color: #fff;
+    transform: uppercase;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    box-shadow: 2px 2px 4px 0 rgba(148, 148, 148, 0.6);
+}
+
+.img-upload .img-ul-upload {
+    background-color: #3c9;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.img-upload .img-ul-clear {
+    background-color: #f70a0a;
+}
+
+.img-ul-drag-box-msg {
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 15px;
+    padding-top: 14px;
+}
+
+.img-ul-container {
+    padding: 15px 10px;
+    float: left;
+    clear: both;
+    display: inline-flex;
+}
+
+.img-ul-container .img-ul-image img {
+    float: left;
+    height: 75px;
+    width: 75px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px dashed #cac2c2;
+}
+
+.img-ul-x-mark {
+    font-size: 20px;
+    cursor: pointer;
+}

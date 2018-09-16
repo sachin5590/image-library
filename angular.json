@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -115,6 +116,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngxImagesUpload": {
+      "root": "projects/ngx-images-upload",
+      "sourceRoot": "projects/ngx-images-upload/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-images-upload/tsconfig.lib.json",
+            "project": "projects/ngx-images-upload/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-images-upload/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-images-upload/src/test.ts",
+            "tsConfig": "projects/ngx-images-upload/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-images-upload/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-images-upload/tsconfig.lib.json",
+              "projects/ngx-images-upload/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
